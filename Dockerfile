@@ -1,4 +1,4 @@
-FROM eclipse-temurin:23-jdk-jammy as builder
+FROM openjdk:23-ea-jdk as builder
 
 ARG MAVEN_VERSION=3.9.6
 ENV MAVEN_HOME=/opt/maven
@@ -16,7 +16,7 @@ WORKDIR /app
 COPY . .
 RUN ./mvnw clean package -DskipTests
 
-FROM eclipse-temurin:23-jdk-jammy
+FROM openjdk:23-ea-jdk
 
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
