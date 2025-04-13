@@ -16,32 +16,30 @@
 </head>
 <body >
     <div class="wrapper" id="name-from">
-        <form action="#">
-            <h2>Welcome</h2>
+        <h2>Welcome</h2>
             <div class="input-field">
                 <label for="name-value"></label><input type="text" id="name-value" required>
                 <label>Enter your username</label>
             </div>
-            <button type="submit" id="login">Log In</button>
-        </form>
+        <button type="submit" id="login">Log In</button>
     </div>
     <div id="chat-room" class="d-none">
-            <div class="chat-container">
-                <div class="card-header">
-                    <h3 id="name-title"></h3>
+        <div class="chat-container">
+            <div class="card-header">
+                <h3 id="name-title"></h3>
+            </div>
+            <div class="card-body">
+                <div class="input-group">
+                    <label for="message-value"></label><input type="text" placeholder="Enter your message " id="message-value" autofocus class="form-control">
+                    <button class="btn btn-dark" id="send-btn">Send</button>
+                    <button class="btn btn-dark" id="logout">Logout</button>
                 </div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <label for="message-value"></label><input type="text" placeholder="Enter your message " id="message-value" autofocus class="form-control">
-                            <button class="btn btn-dark" id="send-btn">Send</button>
-                            <button class="btn btn-dark" id="logout">Logout</button>
-                    </div>
-                    <div class="table-responsive mt-3">
-                        <table id="message-container-table">
-                        </table>
-                    </div>
+                <div class="table-responsive mt-3">
+                    <table id="message-container-table">
+                    </table>
                 </div>
             </div>
+        </div>
     </div>
 </body>
 </html>

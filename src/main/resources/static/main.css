@@ -31,10 +31,6 @@ body::before {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
-form {
-  display: flex;
-  flex-direction: column;
-}
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -100,7 +96,10 @@ button:hover {
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
-  border: 3px solid #f1f1f1;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: absolute;
   top: 50%;
   left: 50%;
