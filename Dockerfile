@@ -1,8 +1,9 @@
-FROM openjdk:23-ea-jdk as builder
+# Stage 1: Build with Maven on Ubuntu-based JDK 23
+FROM azul/zulu-openjdk:23-ea as builder
 
 ARG MAVEN_VERSION=3.9.6
 ENV MAVEN_HOME=/opt/maven
-ENV PATH=${MAVEN_HOME}/bin:$PATH
+ENV PATH="${MAVEN_HOME}/bin:${PATH}"
 
 RUN apt-get update && \
     apt-get install -y curl tar && \
@@ -16,7 +17,8 @@ WORKDIR /app
 COPY . .
 RUN ./mvnw clean package -DskipTests
 
-FROM openjdk:23-ea-jdk
+# Stage 2: Runtime-only JDK
+FROM azul/zulu-openjdk:23-ea
 
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
