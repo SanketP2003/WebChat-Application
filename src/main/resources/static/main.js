@@ -52,3 +52,19 @@ $(document).ready((e)=>{
         }
     })
 })
+// Star Animation Controller
+function createStar() {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+    star.style.animationDelay = Math.random() * 2 + 's';
+    document.getElementById('stars').appendChild(star);
+
+    setTimeout(() => star.remove(), 3000);
+}
+
+// Initialize star animation
+document.addEventListener('DOMContentLoaded', () => {
+    setInterval(createStar, 100);
+});
