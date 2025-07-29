@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Web-Chat
+server:
+  port: 9090
