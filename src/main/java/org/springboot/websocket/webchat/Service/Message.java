@@ -6,6 +6,10 @@ public class Message {
     private String email;
     private String content;
 
+    // Default constructor for JSON deserialization
+    public Message() {
+    }
+
     public Message(String name, String email, String content) {
         this.name = name;
         this.email = email;
